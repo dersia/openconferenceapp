@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Name": "Floor Maps (1/2)",
+    "ImageUrl": "https://s3.amazonaws.com/xamarin-releases/evolve-2016/floor_1.png"
+  },
+  {
+    "Name": "Floor Maps (2/2)",
+    "ImageUrl": "https://s3.amazonaws.com/xamarin-releases/evolve-2016/floor_2.png"
+  }
+]

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+          x:Class="developer.open.space.Clients.Views.Cells.CategoryCell">
+    <ViewCell.Height>
+        <OnPlatform x:TypeArguments="x:Double"  WinPhone="50" iOS="44" Android="44"></OnPlatform>
+    </ViewCell.Height>
+</ViewCell>

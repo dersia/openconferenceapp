@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:developer.open.space.Clients.Views.Controls;assembly=developer.open.space.Clients.Views"
+    xmlns:cells="clr-namespace:developer.open.space.Clients.Views.Cells;assembly=developer.open.space.Clients.Views"
+    xmlns:converters="clr-namespace:developer.open.space.Clients.Converters;assembly=developer.open.space.Clients.Views"
+    xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+    xmlns:behaviors="clr-namespace:developer.open.space.Utils.Helpers;assembly=developer.open.space.Utils"
+    x:Class="developer.open.space.Clients.Views.SpeakerDetailsPage"
+    Title="Speaker Info"
+    x:Name="SpeakerInfo"
+    NavigationPage.BackButtonTitle="Back"
+    BackgroundColor="{DynamicResource Primary}">
+    <ContentPage.Resources>
+     <ResourceDictionary>
+            <converters:SpeakerImageConverter x:Key="SpeakerImageConverter" />
+        <toolkit:HasDataConverter x:Key="GenericIsVisibleConverter"/>
+     </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" x:Name="Row1Header"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid RowSpacing="0" ColumnSpacing="0" x:Name="HeaderView" BackgroundColor="{DynamicResource Primary}">
+            <Image
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Source="{Binding SelectedSpeaker.PhotoUrl, Converter={StaticResource SpeakerImageConverter}}"
+                Aspect="AspectFit"/>
+        </Grid>
+        <controls:ParallaxScrollView x:Name="MainScroll" Grid.RowSpan="2">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" x:Name="Row1Content"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="MainStack"
+                     VerticalOptions="End"
+                     HorizontalOptions="FillAndExpand">
+                    <Image Source="profile_pic_shadow.png" 
+                           Aspect="AspectFill"
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="FillAndExpand"/>
+                    <StackLayout
+                         Padding="{StaticResource StandardPadding}"
+                         Spacing="0"
+                         VerticalOptions="End"
+                         HorizontalOptions="FillAndExpand">
+                        <Label
+                            Text="{Binding SelectedSpeaker.FullName}"
+                            FontSize="18"
+                            TextColor="White">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" Android="sans-serif-light" iOS="HelveticaNeue-Light"/>
+                            </Label.FontFamily>
+                        </Label>
+                        <Label
+                            x:Name="SpeakerTitle"
+                            Text="{Binding SelectedSpeaker.Title}"
+                            FontSize="12"
+                            TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Grid.Row="1" Spacing="0">
+                    <StackLayout BackgroundColor="{DynamicResource Primary}"
+                                 Spacing="{DynamicResource CardSpacing}"
+                                 Padding="{DynamicResource CardPadding}">
+                        <!--Biography-->
+                        <controls:CardView>
+                            <StackLayout Spacing="0">
+                                <controls:LabelSection Text="Biography"/>
+                                <controls:HeaderDivider/>
+                                <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="{StaticResource Primary}">
+                                    <Label Text="{Binding SelectedSpeaker.Biography}" Style="{StaticResource YellowCellLabelStyle}"/>
+                                </StackLayout>
+                                <controls:FooterDivider/>
+                            </StackLayout>
+                        </controls:CardView>
+
+                        <controls:CardView IsVisible="{Binding FollowItems, Converter={StaticResource GenericIsVisibleConverter}}">
+                            <StackLayout Spacing="0">
+                                <!--Follow-->
+                                <controls:LabelSection Text="Follow"/>
+                                <controls:HeaderDivider/>
+                                <controls:NonScrollableListView
+                                    ItemsSource="{Binding FollowItems}"
+                                    VerticalOptions="Start"
+                                    x:Name="ListViewFollow"
+                                    SelectedItem="{Binding SelectedFollowItem, Mode=TwoWay}"
+                                    RowHeight="44">
+                                    <controls:NonScrollableListView.SeparatorColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                                    </controls:NonScrollableListView.SeparatorColor>
+                                    <ListView.Behaviors>
+                                        <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding IgnoreTapCommand}" />
+                                    </ListView.Behaviors>
+                                    <controls:NonScrollableListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell StyleId="disclosure">
+                                                <Grid ColumnSpacing="{StaticResource StandardSpacing}">
+                                                    <Grid.Padding>
+                                                        <OnPlatform x:TypeArguments="Thickness" iOS="0,12" Android="16,8"/>
+                                                    </Grid.Padding>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image VerticalOptions="Center" Source="{Binding Icon}">
+                                                        <Image.IsVisible>
+                                                            <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+                                                        </Image.IsVisible>
+                                                    </Image>
+                                                    <Label Grid.Column="1" VerticalOptions="Center" Style="{DynamicResource DevopenspaceListItemTextStyle}" Text="{Binding Name}"/>
+                                                    <Label Grid.Column="2"
+                                                           VerticalOptions="Center"
+                                                           Style="{DynamicResource DevopenspaceListItemTextStyle}"
+                                                           TextColor="{DynamicResource DetailTextColor}"
+                                                           Text="{Binding Subtitle}">
+                                                        <Label.IsVisible>
+                                                            <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false"/>
+                                                        </Label.IsVisible>
+                                                    </Label>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </controls:NonScrollableListView.ItemTemplate>
+                                </controls:NonScrollableListView>
+                                <controls:FooterDivider/>
+                            </StackLayout>
+                        </controls:CardView>
+
+                        <controls:CardView IsVisible="{Binding HasAdditionalSessions}">
+                            <!--Sessions-->
+                            <StackLayout Spacing="0">
+                                <controls:LabelSection Text="More Sessions" StyleId="MoreSessionsSection"/>
+                                <controls:HeaderDivider/>
+                                <StackLayout IsVisible="{Binding IsBusy}"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="Center"
+                                              BackgroundColor="White"
+                                              Padding="{StaticResource StandardPadding}">
+                                    <ActivityIndicator IsRunning="{Binding IsBusy}" >
+                                        <ActivityIndicator.Color>
+                                            <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+                                        </ActivityIndicator.Color>
+                                    </ActivityIndicator>
+                                    <Label Text="Loading Sessions..."
+                                           HorizontalOptions="Center"
+                                           Style="{DynamicResource DevopenspaceListItemTextStyle}"/>
+                                </StackLayout>
+                                <controls:NonScrollableListView
+                                    x:Name="ListViewSessions"
+                                    ItemsSource="{Binding Sessions}"
+                                    RowHeight="120">
+                                    <controls:NonScrollableListView.SeparatorColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                                    </controls:NonScrollableListView.SeparatorColor>
+                                    <controls:NonScrollableListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <cells:SessionCellView  FavoriteCommand="{Binding Path=BindingContext.FavoriteCommand, Source={x:Reference SpeakerInfo}}"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </controls:NonScrollableListView.ItemTemplate>
+                                </controls:NonScrollableListView>
+                                <controls:FooterDivider/>
+                            </StackLayout>
+                        </controls:CardView>
+                        <controls:CardView IsVisible="{Binding HasAdditionalWorkshops}">
+                            <!--Workshops-->
+                            <StackLayout Spacing="0">
+                                <controls:LabelSection Text="More Workshops" StyleId="MoreWorkshopsSection"/>
+                                <controls:HeaderDivider/>
+                                <StackLayout IsVisible="{Binding IsBusy}"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="Center"
+                                              BackgroundColor="White"
+                                              Padding="{StaticResource StandardPadding}">
+                                    <ActivityIndicator IsRunning="{Binding IsBusy}" >
+                                        <ActivityIndicator.Color>
+                                            <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+                                        </ActivityIndicator.Color>
+                                    </ActivityIndicator>
+                                    <Label Text="Loading Workshops..."
+                                           HorizontalOptions="Center"
+                                           Style="{DynamicResource DevopenspaceListItemTextStyle}"/>
+                                </StackLayout>
+                                <controls:NonScrollableListView
+                                    x:Name="ListViewWorkshops"
+                                    ItemsSource="{Binding Workshops}"
+                                    RowHeight="120">
+                                    <controls:NonScrollableListView.SeparatorColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                                    </controls:NonScrollableListView.SeparatorColor>
+                                    <controls:NonScrollableListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <cells:WorkshopCellView  FavoriteCommand="{Binding Path=BindingContext.FavoriteWorkshopCommand, Source={x:Reference SpeakerInfo}}"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </controls:NonScrollableListView.ItemTemplate>
+                                </controls:NonScrollableListView>
+                                <controls:FooterDivider/>
+                            </StackLayout>
+                        </controls:CardView>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </controls:ParallaxScrollView>
+    </Grid>
+</ContentPage>

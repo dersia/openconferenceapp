@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converters="clr-namespace:developer.open.space.Clients.Converters;assembly=developer.open.space.Clients.Views"
+    xmlns:controls="clr-namespace:developer.open.space.Clients.Views.Controls;assembly=developer.open.space.Clients.Views"
+    xmlns:cells="clr-namespace:developer.open.space.Clients.Views.Cells;assembly=developer.open.space.Clients.Views"
+	xmlns:behaviors="clr-namespace:developer.open.space.Utils.Helpers;assembly=developer.open.space.Utils"
+    x:Class="developer.open.space.Clients.Views.EventDetailsPage"
+    Title="Event Details"
+    BackgroundColor="{StaticResource Primary}">
+   <ContentPage.Resources>
+     <ResourceDictionary>
+            <converters:EventDateDisplayConverter x:Key="EventDateDisplayConverter" />
+            <converters:HasReminderEventTextConverter x:Key="HasReminderEventTextConverter" />
+            <converters:SponsorsListHeightAdjustmentConverter x:Key="HeightConverter" />
+      </ResourceDictionary>
+    </ContentPage.Resources>
+    <controls:AlwaysScrollView>
+        <StackLayout Spacing="0" VerticalOptions="FillAndExpand">
+        <StackLayout BackgroundColor="{StaticResource Primary}"
+                             Spacing="{DynamicResource CardSpacing}"
+                             Padding="{DynamicResource CardPadding}">
+                <controls:CardView>
+            <StackLayout Padding="0" Spacing="0" BackgroundColor="{StaticResource Primary}">
+                    <StackLayout Padding="{StaticResource StandardPadding}" >
+                            <Label Text="{Binding SelectedEvent.Title}" Style="{DynamicResource EventTitleStyle}"  StyleId="EventTitle"/>
+                            <Label Text="{Binding SelectedEvent, Converter={StaticResource EventDateDisplayConverter}}" Style="{DynamicResource openspaceListItemDetailTextStyle}" StyleId="EventTime"/>
+                        <StackLayout Padding="0,16,0,0">
+                                <Label Text="{Binding SelectedEvent.Description}"  Style="{DynamicResource DevopenspaceListItemTextStyle}" StyleId="EventDescription"/>
+                        </StackLayout>
+                    </StackLayout>
+                        <controls:SectionDivider IsVisible="{Binding SelectedEvent.StartTime.HasValue}"/>
+                        <StackLayout Padding="16,0" IsVisible="{Binding SelectedEvent.StartTime.HasValue}">
+                      <Button 
+                            Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}"
+                            Command="{Binding ReminderCommand}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{DynamicResource Primary}"
+                            BorderRadius="0"
+                            BorderWidth="0"
+                            FontSize="16"
+                            BackgroundColor="{StaticResource DarkOrange}"
+                            BorderColor="Transparent"
+                            StyleId="iOSReminderButton">
+                            <Button.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
+                            </Button.IsVisible>
+                        </Button>
+
+                        <Button 
+                            Text="{Binding IsReminderSet, Converter={StaticResource HasReminderEventTextConverter}}"
+                            Command="{Binding ReminderCommand}"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="{StaticResource DarkOrange}"
+                            StyleId="AndroidReminderButton">
+                            <Button.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true"/>
+                            </Button.IsVisible>
+                        </Button>
+                    </StackLayout>
+                        <controls:SectionDivider/>
+                    <Grid Padding="{StaticResource StandardPadding}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Location" Style="{DynamicResource DevopenspaceListItemTextStyle}" VerticalTextAlignment="Center"/>
+						<Label Grid.Column="1" HorizontalOptions="End" Text="{Binding SelectedEvent.LocationName}" Style="{DynamicResource DevopenspaceListItemTextStyle}" TextColor="{DynamicResource DetailTextColor}" VerticalTextAlignment="Center" StyleId="EventLocationRoom"/>
+                    </Grid>
+                        <controls:FooterDivider/>
+            </StackLayout>
+            </controls:CardView>
+
+                <controls:CardView IsVisible="{Binding SelectedEvent.HasSponsor}">
+            <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Sponsored By"/>
+                        <controls:NonScrollableListView 
+							ItemsSource="{Binding Sponsors}" 
+							VerticalOptions="Start" 
+							x:Name="ListViewSponsors"
+							RowHeight="100"
+							SelectedItem="{Binding SelectedSponsor}"
+							HeightRequest="{Binding ListViewHeightAdjustment, Converter={StaticResource HeightConverter}, ConverterParameter={Binding Path=RowHeight, Source={x:Reference ListViewSponsors}}}">
+                            <controls:NonScrollableListView.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SponsorTappedCommand}" />
+                            </controls:NonScrollableListView.Behaviors>
+							<controls:NonScrollableListView.SeparatorColor>
+								<OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+							</controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+								<DataTemplate>
+									<ViewCell StyleId="disclosure">
+										<cells:SponsorCell/>
+									</ViewCell> 
+								</DataTemplate>
+							</controls:NonScrollableListView.ItemTemplate>
+						</controls:NonScrollableListView>
+            </StackLayout>
+            </controls:CardView>
+        </StackLayout>
+        </StackLayout>
+    </controls:AlwaysScrollView>
+</ContentPage>

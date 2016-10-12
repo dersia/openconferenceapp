@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:developer.open.space.Clients.Views.Controls;assembly=developer.open.space.Clients.Views"
+             xmlns:converters="clr-namespace:developer.open.space.Clients.Converters;assembly=developer.open.space.Clients.Views"
+             x:Class="developer.open.space.Clients.Views.FloorMapsPage"
+			 Title="Floor Maps"
+             x:Name="FloorMapPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToUriImageSourceConverter x:Key="StringToUriImageSource" />
+        </ResourceDictionary>        
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="128" />
+        </Grid.RowDefinitions>
+        <controls:ZoomableImage BindingContext="{Binding SelectedFloor}" Grid.Row="0" />
+        <controls:ImageGallery ItemsSource="{Binding FloorMaps}" SelectedItem="{Binding SelectedFloor}"  Grid.Row="1">
+            <controls:ImageGallery.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding ImageTitle}" />
+                        <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="128">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+									Command="{Binding Path=BindingContext.PreviewImageCommand, Source={x:Reference FloorMapPage}}"
+									CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </DataTemplate>
+            </controls:ImageGallery.ItemTemplate>
+        </controls:ImageGallery>
+    </Grid>
+</ContentPage>
