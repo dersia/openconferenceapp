@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="developer.open.space.Clients.Views.FeedbackPage">
     <StackLayout >
-        <Slider Min
+        <Slider Maximum="5" WidthRequest="200" />
+        <Label Text="Please Rate the Workshop {Workshopname}" />
+        <Button Text="Submit your Feedback"></Button>
     </StackLayout>
 </ContentPage>
