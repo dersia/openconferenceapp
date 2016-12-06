@@ -313,5 +313,10 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
                 FilterSessionsCommand.Execute(null);
             }
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

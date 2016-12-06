@@ -130,6 +130,15 @@
                                         BackgroundColor="{StaticResource DarkOrange}" 
                                         Command="{Binding FavoriteCommand}"
                                         TextColor="White"/>
+                            <Button 
+                                    StyleId="FavoriteButton"
+                                    x:Name="FeedbackButtonAndroid"
+                                    Text="Feedback zum Workshop abgeben"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{StaticResource DarkOrange}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{DynamicResource Primary}"
+                                    Command="{Binding GoToFeedbackCommand}" />
 
                             <controls:FavoriteImage StyleId="FavoriteIcon"
                                         x:Name="FavoriteIconAndroid"
@@ -170,6 +179,16 @@
                                     HorizontalOptions="StartAndExpand"
                                     TextColor="{DynamicResource Primary}"
                                     Command="{Binding FavoriteCommand}" />
+                            <Button 
+                                    StyleId="FavoriteButton"
+                                    x:Name="FeedbackButtonIos"
+                                    Text="Feedback zum Workshop abgeben"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{StaticResource DarkOrange}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{DynamicResource Primary}"
+                                    Command="{Binding GoToFeedbackCommand}" />
+                            
                             <controls:FavoriteImage StyleId="FavoriteIcon" 
                                     x:Name="FavoriteIconiOS"
                                     Source="{Binding SelectedWorkshop.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}">

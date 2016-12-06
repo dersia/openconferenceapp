@@ -165,5 +165,10 @@ namespace developer.open.space.Clients.ViewModels
             _isRegistered = PushNotifications.IsRegistered;
             UpdateItems();
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

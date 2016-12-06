@@ -126,7 +126,6 @@ namespace developer.open.space.Clients.ViewModels
                         G = 53,
                         B = 235
                     },
-                    UseSafairReaderMode = true,
                     UseSafariWebViewController = true
                 });
             }

@@ -146,6 +146,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
             await ExecuteLoadSponsorsAsync(false);
         }
 
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

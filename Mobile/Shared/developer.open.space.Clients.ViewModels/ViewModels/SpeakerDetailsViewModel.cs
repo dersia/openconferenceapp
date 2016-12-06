@@ -288,6 +288,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         {
         }
 
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         #region Commands
 
         private ICommand MainScrollCommand => DelegateCommand<ScrolledEventArgs>.FromAsyncHandler(async (e) => await HandleScrolling(e));

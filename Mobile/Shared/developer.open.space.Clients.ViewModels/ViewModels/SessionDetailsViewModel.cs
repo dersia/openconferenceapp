@@ -111,7 +111,7 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         async Task ExecuteShareCommandAsync()
         {
             Logger.Log($"{DevopenspaceLoggerKeys.Share}, Title, {SelectedSession.Title}", Prism.Logging.Category.Info, Priority.None);
-            await CrossShare.Current.Share($"Can't wait for \"{SelectedSession.Title}\" at #devspace !", "Share");
+            await CrossShare.Current.Share(new Plugin.Share.Abstractions.ShareMessage() { Text = $"Can't wait for \"{SelectedSession.Title}\" at #devspace !", Title = "Share" });
         }
 
         public ICommand LoadSessionCommand => DelegateCommand.FromAsyncHandler(async () => await ExecuteLoadSessionCommandAsync());
@@ -155,6 +155,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

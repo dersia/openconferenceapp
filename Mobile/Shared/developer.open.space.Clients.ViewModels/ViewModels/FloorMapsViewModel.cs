@@ -89,6 +89,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
             await LoadFloors();
         }
 
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool _isLoading;
         public bool IsLoading
         {

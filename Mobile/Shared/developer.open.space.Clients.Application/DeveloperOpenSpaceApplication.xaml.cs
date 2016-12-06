@@ -158,6 +158,7 @@ namespace developer.open.space.Clients.Application
             Container.RegisterTypeForNavigation<DroidRootPage, DroidRootViewModel>();
             Container.RegisterTypeForNavigation<iOSRootPage, iOSRootViewModel>();
             Container.RegisterTypeForNavigation<SimpleNavigationPage, SimpleNavigationViewModel>();
+            //Container.RegisterTypeForNavigation<FeedbackPage, FeedbackViewModel>();
         }
         #endregion
 

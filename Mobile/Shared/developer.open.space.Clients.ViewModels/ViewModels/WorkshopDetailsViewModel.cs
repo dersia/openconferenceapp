@@ -54,6 +54,13 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
             set { SetProperty(ref _selectedSpeaker, value); }
         }
 
+        public ICommand GoToFeedbackCommand => new DelegateCommand(GoToFeedback);
+
+        private void GoToFeedback()
+        {
+            GoToCommand.Execute(nameof(FeedbackPage));
+        }
+
         public ICommand GoToSpeakerCommand => new DelegateCommand<ItemTappedEventArgs>((eventArgs) => GoToSpeaker(eventArgs?.Item as Speaker));
 
         private void GoToSpeaker(Speaker selectedSpeaker)
@@ -110,7 +117,7 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         async Task ExecuteShareCommandAsync()
         {
             Logger.Log($"{DevopenspaceLoggerKeys.Share}, Title, {SelectedWorkshop.Title}", Prism.Logging.Category.Info, Priority.None);
-            await CrossShare.Current.Share($"Can't wait for \"{SelectedWorkshop.Title}\" at #devspace !", "Share");
+            await CrossShare.Current.Share(new Plugin.Share.Abstractions.ShareMessage() { Text = $"Can't wait for \"{SelectedWorkshop.Title}\" at #devspace !", Title = "Share" });
         }
 
         public ICommand LoadWorkshoCommand => DelegateCommand.FromAsyncHandler(async () => await ExecuteLoadWorkshoCommandAsync());
@@ -154,6 +161,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

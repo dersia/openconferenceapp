@@ -126,6 +126,11 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
             if (Events.Count == 0)
                 LoadEventsCommand.Execute(null);
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

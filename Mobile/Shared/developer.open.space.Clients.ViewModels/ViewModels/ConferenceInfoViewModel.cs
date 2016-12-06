@@ -155,5 +155,10 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         {
             await UpdateConfigs();
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

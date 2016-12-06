@@ -36,5 +36,10 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

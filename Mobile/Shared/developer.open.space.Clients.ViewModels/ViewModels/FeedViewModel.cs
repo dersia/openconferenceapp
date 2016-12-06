@@ -492,5 +492,10 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
             }
             UpdatePage();
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -157,5 +157,10 @@ namespace developer.open.space.Clients.ViewModels.ViewModels
         {
             LoadEventDetailsCommand.Execute(null);
         }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
