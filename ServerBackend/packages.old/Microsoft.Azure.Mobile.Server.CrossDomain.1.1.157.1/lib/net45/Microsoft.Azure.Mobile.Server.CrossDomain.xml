@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Mobile.Server.CrossDomain</name>
+    </assembly>
+    <members>
+        <member name="T:System.Collections.Generic.DictionaryExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.Object,System.Object},System.Object,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance where both <c>TKey</c> and <c>TValue</c> are of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.Object,System.Object},System.Object)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance where both <c>TKey</c> and <c>TValue</c> are of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.Type,System.Object},System.Type,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.Type"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.Type,System.Object},System.Type)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.Type"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.SetOrClearValue``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0)">
+            <summary>
+            Sets the entry with the given key to the given value. If value is the default value
+            then the entry is removed.
+            </summary>
+            <typeparam name="T">Type of value to be set or cleared.</typeparam>
+            <param name="dictionary">The dictionary to insert of clear a value from.</param>
+            <param name="key">The key of the entry.</param>
+            <param name="value">The value (or default value).</param>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault(System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Gets the value with the given key, or null if the key is not present. 
+            </summary>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <c>string</c>and <c>TValue</c> of type <c>string</c>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise null.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <c>string</c>and <c>TValue</c> of type <c>string</c>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise null.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.String,System.String},System.String,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/>; otherwise false.</returns>
+        </member>
+        <member name="M:System.StringExtensions.FormatForUser(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.CurrentCulture"/>, per FxCop's rule
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.FormatInvariant(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/>.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.SplitAndTrim(System.String,System.Char[])">
+            <summary>
+            Splits a string into segments based on a given <paramref name="separator"/>. The segments are 
+            trimmed and empty segments are removed.
+            </summary>
+            <param name="input">The string to split.</param>
+            <param name="separator">An array of Unicode characters that delimit the substrings in this instance, an empty array that contains no delimiters, or null.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing the resulting segments.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Controllers.CrossDomainController">
+            <summary>
+            This controller returns files that support cross-domain communication for older browsers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.CrossDomainController.Bridge(System.String)">
+            <summary>
+             A page that, when hosted in an <c>iframe</c>, will accept postMessage messages from approved
+             origins and will forward them as a same-domain ajax request to the runtime. This is needed
+             for the <c>IframeBridge</c> transport in <c>MobileApps.Web.js</c>, as used by IE8-9.
+            </summary>
+            <param name="origin">Origin to verify</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> representing the result.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.CrossDomainController.Reset">
+            <summary>
+            Reset helper for unit test purposes.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Censored</name>
+    </assembly>
+    <members>
+        <member name="T:Censored.Censor">
+            <summary>
+            A .NET library to easily easily detect and censor words
+            </summary>
+        </member>
+        <member name="P:Censored.Censor.CensoredWords">
+            <summary>
+            Gets the censored words list.
+            </summary>
+            <value>The censored words list.</value>
+        </member>
+        <member name="M:Censored.Censor.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Censored.Censor"/> class.
+            </summary>
+            <param name="censoredWords">Censored words, if null uses default list</param>
+        </member>
+        <member name="M:Censored.Censor.CensorText(System.String)">
+            <summary>
+            Censors the text and replaces dirty words with ****
+            </summary>
+            <returns>The text that is now censored</returns>
+            <param name="text">Text to censor</param>
+        </member>
+        <member name="M:Censored.Censor.HasCensoredWord(System.String)">
+            <summary>
+            Determines whether the text is dirty (has a bad word in it).
+            </summary>
+            <returns><c>true</c> if text is dirty; otherwise, <c>false</c>.</returns>
+            <param name="text">Text to check for dirty words.</param>
+        </member>
+    </members>
+</doc>

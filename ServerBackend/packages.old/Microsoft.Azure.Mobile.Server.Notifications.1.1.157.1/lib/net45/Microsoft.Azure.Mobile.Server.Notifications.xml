@@ -1,0 +1,1362 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Mobile.Server.Notifications</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.Mobile.Server.Properties.CommonResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ArgMustBeGreaterThanOrEqualTo">
+            <summary>
+              Looks up a localized string similar to Argument must be greater than or equal to {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ArgumentOutOfRange_InvalidEnum">
+            <summary>
+              Looks up a localized string similar to The value must be from the &apos;{0}&apos; enumeration..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Assembly_UnknownFileVersion">
+            <summary>
+              Looks up a localized string similar to &lt;unknown&gt;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.DomainManager_Conflict">
+            <summary>
+              Looks up a localized string similar to The operation failed due to a conflict: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.HttpHeaderToken_Invalid">
+            <summary>
+              Looks up a localized string similar to The format of value &apos;{0}&apos; is invalid. The character &apos;{1}&apos; is not a valid HTTP header token character..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Property_CannotBeNull">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; cannot be null..
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.DictionaryExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.Object,System.Object},System.Object,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance where both <c>TKey</c> and <c>TValue</c> are of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.Object,System.Object},System.Object)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance where both <c>TKey</c> and <c>TValue</c> are of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.Type,System.Object},System.Type,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.Type"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/> and non-null; otherwise false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.Type,System.Object},System.Type)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.Type"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise the default value.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.SetOrClearValue``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0)">
+            <summary>
+            Sets the entry with the given key to the given value. If value is the default value
+            then the entry is removed.
+            </summary>
+            <typeparam name="T">Type of value to be set or cleared.</typeparam>
+            <param name="dictionary">The dictionary to insert of clear a value from.</param>
+            <param name="key">The key of the entry.</param>
+            <param name="value">The value (or default value).</param>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault(System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Gets the value with the given key, or null if the key is not present. 
+            </summary>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <c>string</c>and <c>TValue</c> of type <c>string</c>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise null.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetValueOrDefault``1(System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <c>string</c>and <c>TValue</c> of type <c>string</c>.</param>
+            <param name="key">The key whose value to get.</param>
+            <returns>the value with the specified key if found; otherwise null.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.String,System.String},System.String,``0@)">
+            <summary>
+            Gets the value of <typeparamref name="TValue"/> with the given key, or the <c>default</c> value 
+            if the key is not present or the value is not of type <typeparamref name="TValue"/>. 
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The <see cref="T:System.Collections.Generic.IDictionary`2"/> instance <c>TKey</c> is of type <see cref="T:System.String"/> and <c>TValue</c> of type <see cref="T:System.Object"/>.</param>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value with the specified key if found; otherwise the default value.</param>
+            <returns><c>true</c> if key was found and value is of type <typeparamref name="TValue"/>; otherwise false.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.ServiceLogCategories">
+            <summary>
+            Category names traced by the service infrastructure. By separating it out from the default Web API 
+            categories and from other user categories it is possible to filter them out in the tracing
+            logic.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.MobileAppSettingsDictionaryExtensions">
+            <summary>
+            Provides various extension methods for the <see cref="T:Microsoft.Azure.Mobile.Server.MobileAppSettingsDictionary"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.MobileAppSettingsDictionaryExtensions.GetConnectionString(Microsoft.Azure.Mobile.Server.MobileAppSettingsDictionary,System.String)">
+            <summary>
+            Gets a connection string by first looking under connection strings and then if not found
+            under application settings.
+            </summary>
+            <param name="settings">The <see cref="T:Microsoft.Azure.Mobile.Server.MobileAppSettingsDictionary"/> to extract the connection string from.</param>
+            <param name="name">The name of the connection string to look up.</param>
+            <returns>The connection string; or null if not present.</returns>
+        </member>
+        <member name="M:System.StringExtensions.FormatForUser(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.CurrentCulture"/>, per FxCop's rule
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.FormatInvariant(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/>.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.SplitAndTrim(System.String,System.Char[])">
+            <summary>
+            Splits a string into segments based on a given <paramref name="separator"/>. The segments are 
+            trimmed and empty segments are removed.
+            </summary>
+            <param name="input">The string to split.</param>
+            <param name="separator">An array of Unicode characters that delimit the substrings in this instance, an empty array that contains no delimiters, or null.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing the resulting segments.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.AlertProperties">
+            <summary>
+            The "alert" property contains properties specific to the alert in a notification targeting Apple Push Notification Service (APNS). It is intended
+            to be used from the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.AlertProperties.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.AlertProperties"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.AlertProperties.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.AlertProperties"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.Azure.Mobile.Server.AlertProperties"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.AlertProperties.Body">
+            <summary>
+            The text of the alert message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.AlertProperties.ActionLocKey">
+            <summary>
+            If a string is specified, the system displays an alert with two buttons. The string is used as a key to get a localized string in the current localization to use for the right button’s title instead of “View”.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.AlertProperties.LocKey">
+            <summary>
+            A key to an alert-message string in a <c>Localizable.strings</c> file for the current localization (which is set by the user’s language preference). The key string can be formatted with <c>%@</c> and <c>%n$@</c> specifiers to take the variables specified in <c>loc-args</c>. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.AlertProperties.LogArgs">
+            <summary>
+            Variable string values to appear in place of the format specifiers in <c>loc-key</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.AlertProperties.LaunchImage">
+            <summary>
+            The filename of an image file in the application bundle; it may include the extension or omit it. The image is used as the launch image 
+            when users tap the action button or move the action slider. If this property is not specified, the system either uses the previous 
+            snapshot, uses the image identified by the UILaunchImageFile key in the application’s <c>Info.plist</c> file, or falls back to <c>Default.png</c>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.ApplePushMessage">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> helps generating a notification payload targeting 
+            Apple Push Notification Service. Notifications can be sent using the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>
+            class.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.IPushMessage">
+            <summary>
+            Marker interface identifying various notification payloads that can be sent to the Notification Hub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApplePushMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> class enabling creation a notification
+            message targeting Apple Push Notification Service. Set the appropriate properties on the message
+            and submit through the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApplePushMessage.#ctor(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> class with a given <paramref name="alert"/>
+            message and an optional <paramref name="expiration"/> of the notification. 
+            </summary>
+            <param name="alert">The notification alert message.</param>
+            <param name="expiration">A <see cref="T:System.TimeSpan"/> relative to the current time. At the end of the lifetime, 
+            the notification is no longer valid and can be discarded. If this value is non-null, APNs stores the 
+            notification and tries to deliver the notification at least once. Specify null to indicate that the 
+            notification expires immediately and that APNs should not store the notification at all.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApplePushMessage.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.Azure.Mobile.Server.AlertProperties"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApplePushMessage.ToString">
+            <summary>
+            Provides a JSON encoded representation of this <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/>
+            </summary>
+            <returns>A JSON encoded string.</returns>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApplePushMessage.Aps">
+            <summary>
+            Gets the <see cref="T:Microsoft.Azure.Mobile.Server.ApsProperties"/> for this <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApplePushMessage.Expiration">
+            <summary>
+            Sets or gets the lifetime of the notification. At the end of the lifetime, the notification is no 
+            longer valid and can be discarded. If this value is non-null, APNs stores the notification and tries 
+            to deliver the notification at least once. Specify null to indicate that the notification expires 
+            immediately and that APNs should not store the notification at all.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApplePushMessage.JsonPayload">
+            <summary>
+            As an alternative to building the notification by initializing the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> directly, 
+            it is possible to provide a complete JSON representation which will be sent to the Notification Hub unaltered.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.ApsProperties">
+            <summary>
+            The "aps" property contains the definition of a notification targeting Apple Push Notification Service (APNS). It is intended
+            to be used from the <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApsProperties.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.ApsProperties"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.ApsProperties.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.ApsProperties"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.Azure.Mobile.Server.ApsProperties"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApsProperties.Alert">
+            <summary>
+            The alert message as a single string. For more complex alert message options, please use <see cref="M:AlertProperties"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApsProperties.AlertProperties">
+            <summary>
+            The alert message as a dictionary with additional properties describing the alert such as localization information, which image to display, etc.
+            If the alert is simply a string then please use <see cref="M:Alert"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApsProperties.Badge">
+            <summary>
+            The number to display as the badge of the application icon. If this property is absent, the badge is not changed. 
+            To remove the badge, set the value of this property to 0.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApsProperties.Sound">
+            <summary>
+            The name of a sound file in the application bundle. The sound in this file is played as an alert. If the sound file 
+            doesn’t exist or default is specified as the value, the default alert sound is played. The audio must be in one 
+            of the audio data formats that are compatible with system sounds; 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.ApsProperties.ContentAvailable">
+            <summary>
+            Provide this key with a value of 1 to indicate that new content is available. This is used to support 
+            Newsstand apps and background content downloads.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController"/> defines an endpoint for managing installation registrations for a
+            Notification Hub associated with this service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.PutInstallation(System.String,Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation)">
+            <summary>
+            Enables the registration of a device installation for push notifications via PUT request.
+            If the specified installationId does not exist on the notification hub, a new installation is created and registered.
+            If the specified installationId already exists, the installation is modified.
+            </summary>
+            <param name="installationId">The installation id to register or modify.</param>
+            <param name="notificationInstallation">The <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation"/> object to register.</param>
+            <returns><see cref="T:System.Net.Http.HttpResponseMessage"/> describing the result of the operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.DeleteInstallation(System.String)">
+            <summary>
+            Enables the deletion of the specified device installation registration via DELETE request.
+            </summary>
+            <param name="installationId">The installation id to deregister from Notification Hub.</param>
+            <returns><see cref="T:System.Net.Http.HttpResponseMessage"/> describing the result of the operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.CopyTagsToInstallation(Microsoft.Azure.NotificationHubs.Installation,System.Collections.Generic.HashSet{System.String},System.Boolean)">
+            <summary>
+            Copies the tags from the specified set to the Installation object, excluding InstallationId and UserId (conditionally).
+            </summary>
+            <param name="installation">The Installation object to copy tags to.</param>
+            <param name="tags">The set of tags to copy.</param>
+            <param name="copyUserId">True to copy the UserId tag. False, otherwise.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.GetTagsAssociatedWithInstallationId(System.String)">
+            <summary>
+            Gets a set of unique tags associated with the specified installation id from all the associated registrations.
+            </summary>
+            <param name="installationId">The installation id to get tags for.</param>
+            <returns>A set of tags associated with the specified installation Id.  If installation id doesn't exist, set will have zero elements.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.GetUserIdTagFromHashset(System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Gets the UserId tag, if present, from the specified collection.
+            </summary>
+            <param name="tagsCollection">The collection to search for the UserId substring.</param>
+            <returns>Null if no UserId tag was found; else the UserId tag.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.UpsertInstallationAsync(Microsoft.Azure.NotificationHubs.Installation)">
+            <summary>
+            Invokes the <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> create/update operation.
+            </summary>
+            <param name="installation">The <see cref="T:Microsoft.Azure.NotificationHubs.Installation"/> to create or update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.DeleteInstallationAsync(System.String)">
+            <summary>
+            Invokes the <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> delete operation.
+            </summary>
+            <param name="installationId">The installation id to delete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Controllers.NotificationInstallationsController.ValidateNotificationInstallation(System.String,Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation)">
+            <summary>
+            Validates the specified parameters provided in the request.  Throws HttpResponseException if there are errors.
+            </summary>
+            <param name="installationId">The installation id being registered, parse from URI.</param>
+            <param name="notificationInstallation">The installation object parsed from body.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile">
+            <summary>
+            Represents a Cycle Tile targeting MPNS. Use the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/> with 
+            <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> to create an MPNS notification and send it using the 
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>.
+            </summary>
+            <remarks>
+            For more information about MPNS Cycle Tiles, see <c>http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj207036</c>.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage">
+            <summary>
+            Abstract base class for all MPNS tiles used by <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> and related classes. 
+            </summary>
+            <remarks>
+            This class is not intended for direct use.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage">
+            <summary>
+            Common base class used by <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> and related classes. 
+            </summary>
+            <remarks>
+            This class is not intended for direct use; it is used by <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/>,
+            and <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage"/> class with a given <paramref name="version"/>
+            and <paramref name="template"/>
+            </summary>
+            <param name="version">Optional version of the tile, e.g. "2.0", or null.</param>
+            <param name="template">Optional name of the template, e.g. "FlipTile", or null.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage.Version">
+            <summary>
+            Gets or sets the version of the tile or toast, e.g. "2.0", or <c>null</c> if there is no version.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage.Template">
+            <summary>
+            Gets or sets the template name of the tile or toast, e.g. "FlipTile", or <c>null</c> if there is no template name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage.TileId">
+            <summary>
+            Gets or sets the id of the tile. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage.Properties">
+            <summary>
+            Gets the properties associated with this toast or tile.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage.#ctor">
+            <summary>
+            Internal constructor needed for serialization.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage"/> implementation with a given
+            <paramref name="version"/> and <paramref name="template"/>.
+            </summary>
+            <param name="version">The version of the tile.</param>
+            <param name="template">The name of the template.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage.Id">
+            <summary>
+            Gets or sets the optional ID or the tile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage.Count">
+            <summary>
+            Gets or sets a value between 1 and 99 that will be displayed in the Count field of the Tile. A value of 0 
+            means the Count will not be displayed. If this property is not set, the Count display will not change during 
+            an update.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.MpnsTileMessage.Title">
+            <summary>
+            Gets or sets the text that displays on the front side of the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.SmallBackgroundImage">
+            <summary>
+            Gets and sets the front-side background image for the small tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage1">
+            <summary>
+            Gets or sets background image 1 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage2">
+            <summary>
+            Gets or sets background image 2 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage3">
+            <summary>
+            Gets or sets background image 3 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage4">
+            <summary>
+            Gets or sets background image 4 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage5">
+            <summary>
+            Gets or sets background image 5 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage6">
+            <summary>
+            Gets or sets background image 6 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage7">
+            <summary>
+            Gets or sets background image 7 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage8">
+            <summary>
+            Gets or sets background image 8 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.CycleTile.CycleImage9">
+            <summary>
+            Gets or sets background image 9 for the medium and wide tile sizes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile">
+            <summary>
+            Represents a Flip Tile targeting MPNS. Use the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/> with 
+            <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> to create an MPNS notification and send it using the 
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>.
+            </summary>
+            <remarks>
+            For more information about MPNS Flip Tiles, see <c>http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206971</c>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.SmallBackgroundImage">
+            <summary>
+            Gets and sets the front-side background image for the small tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.WideBackgroundImage">
+            <summary>
+            Gets and sets the front-side background image for the wide tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.WideBackBackgroundImage">
+            <summary>
+            Gets and sets the back-side background image for the wide tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.WideBackContent">
+            <summary>
+            Gets and sets the text that displays above the title, on the back-side of the wide tile size. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.BackgroundImage">
+            <summary>
+            Gets or sets the background image of the front of the tile. If this property is an empty URI, the background image 
+            of the front of the tile will not change during an update. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.BackBackgroundImage">
+            <summary>
+            Gets or sets a background image of the back of the tile. If this property is an empty URI, 
+            the background image of the back of the tile will not change during an update. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.BackTitle">
+            <summary>
+            Gets or sets the title to display at the bottom of the back of the tile. If this property is an empty string, 
+            the title on the back of the tile will not change during an update.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.FlipTile.BackContent">
+            <summary>
+            Gets or sets the text to display on the back of the tile, above the title. If this 
+            property is an empty string, the content on the back of the tile will not change
+            during an update.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.GooglePushMessage">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> helps generating a notification payload targeting 
+            Google Cloud Messaging for Chrome (GCM). Notifications can be sent using the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>
+            class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.GooglePushMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> class enabling creation
+            of a notification message targeting Google Cloud Messaging for Chrome (GCM).Set the 
+            appropriate properties on the message and submit through the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.GooglePushMessage.#ctor(System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.TimeSpan})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> class with a given
+            set of <paramref name="data"/> parameters and an optional <paramref name="timeToLive"/>.
+            </summary>
+            <param name="data"></param>
+            <param name="timeToLive">A <see cref="T:System.TimeSpan"/> relative to the current time. The value of this 
+            parameter must be a duration from 0 to 2,419,200 seconds (28 days), and it corresponds to the maximum period of time 
+            for which GCM will store and try to deliver the message. Requests that don't contain this field default 
+            to the maximum period of 4 weeks.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.GooglePushMessage.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.GooglePushMessage.ToString">
+            <summary>
+            Provides a JSON encoded representation of this <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/>
+            </summary>
+            <returns>A JSON encoded string.</returns>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.GooglePushMessage.CollapseKey">
+            <summary>
+            A collapse key is an arbitrary string that is used to collapse a group of like messages when the device 
+            is offline, so that only the most recent message gets sent to the client. For example, "New mail", "Updates available", 
+            and so on.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.GooglePushMessage.DelayWhileIdle">
+            <summary>
+            Indicates whether the message should be delivered while the device is idle.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.GooglePushMessage.Data">
+            <summary>
+            A collection or name-value properties to include in the message. Properties must be simple types, i.e. they 
+            can not be nested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.GooglePushMessage.TimeToLiveInSeconds">
+            <summary>
+            The Time to Live (TTL) property lets the sender specify the maximum lifespan of a message. The value of this 
+            parameter must be a duration from 0 to 2,419,200 seconds, and it corresponds to the maximum period of time 
+            for which GCM will store and try to deliver the message. Requests that don't contain this field default 
+            to the maximum period of 4 weeks.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.GooglePushMessage.JsonPayload">
+            <summary>
+            As an alternative to building the notification by initializing the <see cref="T:Microsoft.Azure.Mobile.Server.GooglePushMessage"/> directly, 
+            it is possible to provide a complete JSON representation which will be sent to the Notification Hub unaltered.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile">
+            <summary>
+            Represents a Iconic Tile targeting MPNS. Use the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/> with 
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/> to create an MPNS notification and send it using the 
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>.
+            </summary>
+            <remarks>
+            For more information about MPNS Iconic Tiles, see <c>http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj207009</c>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.IconImage">
+            <summary>
+            Gets or sets the icon image for the medium and large tile sizes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.SmallIconImage">
+            <summary>
+            Gets or sets the icon image for the small tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.WideContent1">
+            <summary>
+            Gets or sets the text that displays on the first row of the wide tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.WideContent2">
+            <summary>
+            Gets or sets the text that displays on the second row of the wide tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.WideContent3">
+            <summary>
+            Gets or sets the text that displays on the third row of the wide tile size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.IconicTile.BackgroundColor">
+            <summary>
+            Gets or sets the background color of the Tile. Setting this property overrides the 
+            default theme color that is set on the phone.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> class helps in generating a notification payload targeting 
+            Microsoft Push Notification Services. Notifications can be sent using the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>
+            class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.MpnsPushMessage.#ctor(Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> class with a given <paramref name="toastOrTile"/>.
+            The toast or tile can be <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/>,
+            or <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.Toast"/> (defined in the <c>Notifications</c> namespace).
+            </summary>
+            <param name="toastOrTile">One of <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/>, or <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.Toast"/>.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.MpnsPushMessage.ToString">
+            <summary>
+            Provides an XML representation of the <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.MpnsPushMessage.Version">
+            <summary>
+            Gets or sets the version of the of the toast or tile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.MpnsPushMessage.Message">
+            <summary>
+            Gets or sets the specific <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.MpnsMessage"/> for this instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.MpnsPushMessage.XmlPayload">
+            <summary>
+            As an alternative to building the notification programmatically using a <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.CycleTile"/>, <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.FlipTile"/>
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IconicTile"/>, or <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.Toast"/> (defined in the <c>Notifications</c> namespace), it is possible to provide a complete XML 
+            representation which will be sent to the Notification Hub unaltered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.MpnsPushMessage.Headers">
+            <summary>
+            Any additional HTTP headers sent to the Microsoft Push Notification Services along with the notification.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation"/> contains information for registering a device installation for
+            push notifications through a notification hub.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.PushChannel">
+            <summary>
+            The channel URI if registering the installation for WNS; Device Token if registering for APNS.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.Platform">
+            <summary>
+            The platform for this installation. The platform must be one of the following values: wns, apns.  
+            Where wns stands for "Windows Push Notification Services", and apns is "Apple Push Notification Service".
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.InstallationId">
+            <summary>
+            The device installation id to register.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.Templates">
+            <summary>
+            A dictionary of template names to <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate"/> objects.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.SecondaryTiles">
+            <summary>
+            A dictionary of secondary tile names to <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile"/> objects to register with this installation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation.Tags">
+            <summary>
+            A list of tags to register with this installation.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile"/> contains information for registering a WNS secondary tile with a <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile.PushChannel">
+            <summary>
+            The channel URI to register with the tile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile.Tags">
+            <summary>
+            A set of tags to register with the tile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationSecondaryTile.Templates">
+            <summary>
+            A dictionary of template names to <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate"/> objects to register with the tile.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate">
+            <summary>
+            A <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate"/> contains information for registering a template with a <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationInstallation"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate.Body">
+            <summary>
+            The notification payload for this <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.NotificationTemplate.Headers">
+            <summary>
+            For WNS, a dictionary of header names to values that specify the notification type (i.e. "X-WNS-TYPE":"wns/toast").
+            For all other platforms this property is meaningless.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/> provides a mechanism for sending notifications to mobile applications
+            through a Notification Hub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/> with a given
+            </summary>
+            <param name="config">
+            The <see cref="T:System.Web.Http.HttpConfiguration"/> for the current service.
+            </param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.SendAsync(Microsoft.Azure.Mobile.Server.Notifications.IPushMessage)">
+            <summary>
+            Sends a notification to the Notification Hub.
+            </summary>
+            <param name="message">The notification payload is one of <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/>,
+            <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/>, or <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the notification send operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.SendAsync(Microsoft.Azure.Mobile.Server.Notifications.IPushMessage,System.String)">
+            <summary>
+            Sends a notification to the Notification Hub with a given tag expression.
+            </summary>
+            <param name="message">The notification payload is one of <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/>,
+            <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/>, or <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/>.</param>
+            <param name="tagExpression">A tag expression representing the combination of tags to use for this notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the notification send operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.SendAsync(Microsoft.Azure.Mobile.Server.Notifications.IPushMessage,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sends a notification to the Notification Hub with a given tag expression.
+            </summary>
+            <param name="message">The notification payload is one of <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/>,
+            <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/>, or <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/>.</param>
+            <param name="tags">The set of tags to use for this notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the notification send operation.</returns>
+            <remarks>This method is obsolete. You should use the HubClient.SendNotificationAsync() method instead.</remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.CreateNotificationHubClient(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> in a mockable manner.
+            </summary>
+            <param name="connectionString">The connection string for the <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/>.</param>
+            <param name="hubName">The name of the hub.</param>
+            <param name="enableTestSend">Indicates whether test sends should be enabled.</param>
+            <returns>A new <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.CreateNotification(Microsoft.Azure.Mobile.Server.Notifications.IPushMessage)">
+            <summary>
+            Creates a <see cref="T:Microsoft.Azure.NotificationHubs.Notification"/> from a <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IPushMessage"/>.
+            </summary>
+            <param name="message">The <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.IPushMessage"/> to create the <see cref="T:Microsoft.Azure.NotificationHubs.Notification"/> from.</param>
+            <returns>The resulting <see cref="T:Microsoft.Azure.NotificationHubs.Notification"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.SendNotificationAsync(Microsoft.Azure.NotificationHubs.Notification,System.String)">
+            <summary>
+            Makes <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> send operation mockable.
+            </summary>
+            <param name="notification">The notification to send.</param>
+            <param name="tagExpression">A tag expression representing the combination of tags to use for this notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the notification send operation.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.PushClient.SendNotificationAsync(Microsoft.Azure.NotificationHubs.Notification,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Makes <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> send operation mockable.
+            </summary>
+            <param name="notification">The notification to send.</param>
+            <param name="tags">The set of tags to use for this notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the notification send operation.</returns>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.PushClient.HubClient">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Azure.NotificationHubs.NotificationHubClient"/> to use for sending notifications.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.PushClient.EnableTestSend">
+            <summary>
+            When test send is enabled, all notifications only reach up to 10 devices for each send call and the SendNotificationAsync method
+            return a detailed list of the outcomes for all those notification deliveries (for example, authentication errors, throttling
+            errors, and so on).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Properties.RResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.ArgumentOutOfRange_GreaterThan">
+            <summary>
+              Looks up a localized string similar to The value must be greater than {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.ArgumentOutOfRange_LessThan">
+            <summary>
+              Looks up a localized string similar to The value must be less than {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_CreateOrUpdateInstallationFailed">
+            <summary>
+              Looks up a localized string similar to Could not create or update installation with id &apos;{0}&apos;. Error received: &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_DeleteInstallationFailed">
+            <summary>
+              Looks up a localized string similar to Could not delete installation with id &apos;{0}&apos;. Error received: &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_DoesNotSupportTemplateHeaders">
+            <summary>
+              Looks up a localized string similar to The NotificationTemplate.Headers property must be null if registration is targeting {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_EmptyHeaderValueInSecondaryTileForHeaderName">
+            <summary>
+              Looks up a localized string similar to In the SecondaryTile field with header name &apos;{0}&apos;, the header value was null or empty..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_EmptyPushChannelInSecondaryTile">
+            <summary>
+              Looks up a localized string similar to The PushChannel field was null or empty in the secondary tile..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_InstallationIdDoesntMatchUri">
+            <summary>
+              Looks up a localized string similar to The InstallationId in the request body does not match the InstallationId in the URL..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_InstallationIdNotSpecifiedInUrl">
+            <summary>
+              Looks up a localized string similar to The Installation Id was not specified in the URL..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_InstallationIdNotValidGuid">
+            <summary>
+              Looks up a localized string similar to The InstallationId is not a valid Guid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_MissingPropertyInRequestBody">
+            <summary>
+              Looks up a localized string similar to The required parameter &apos;{0}&apos; was null or empty in the request body..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_NoConnectionString">
+            <summary>
+              Looks up a localized string similar to Could not find a connection string named &apos;{0}&apos;. Please ensure that this connection string is present as a service setting..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_NoHubName">
+            <summary>
+              Looks up a localized string similar to Could not find a service setting named &apos;{0}&apos;. Please ensure that a setting is present..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_NotificationInstallationWasNull">
+            <summary>
+              Looks up a localized string similar to The NotificationInstallation was null. This happens when the request body contains malformed JSON..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_SecondaryTileTemplatesWasNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The Templates property of SecondaryTile was null or had no templates specified..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_SecondaryTileWasNull">
+            <summary>
+              Looks up a localized string similar to A secondary tile was null in the NotificationInstallation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_TemplateWasNull">
+            <summary>
+              Looks up a localized string similar to Found a null Template value in the NotificationInstallation..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_TestSend">
+            <summary>
+              Looks up a localized string similar to The &apos;{0}&apos; property must be set before the &apos;{1}&apos; property has been accessed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_UnknownPayload">
+            <summary>
+              Looks up a localized string similar to The &apos;{0}&apos; class is not a supported notification payload. Supported payloads are: {1}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.RResources.NotificationHub_UnsupportedPlatform">
+            <summary>
+              Looks up a localized string similar to Unsupported service type &apos;{0}&apos; specified in Platform field..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.ApplePushMessage"/> helps generating a notification payload targeting 
+            devices that have registered with a template registration. A template lets the device specify 
+            the shape of notifications that it wants to receive including a set of keywords which it wants 
+            the sender to fill in. Instead of the sender building the entire notification, it simply sets the
+            keyword values. The Notification Hub will then build a notification using the particular template
+            registered by device and the keywords provided by the sender. This makes it much easier to send
+            notifications regardless of the platform of the receiver. The keywords defined by the 
+            <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/> class can be sent using the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TemplatePushMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TemplatePushMessage.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.Azure.Mobile.Server.TemplatePushMessage"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.TileBinding">
+            <summary>
+            This class represents the <c>binding</c> element of a Windows Notification tile, see
+            <c>http://msdn.microsoft.com/en-us/library/windows/apps/hh761491.aspx</c> for details.
+            This class is intended for use as part of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TileBinding.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TileBinding.#ctor(Microsoft.Azure.Mobile.Server.TileImage[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> class.
+            </summary>
+            <param name="images">An initial set of <see cref="T:Microsoft.Azure.Mobile.Server.TileImage"/> for this tile.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TileBinding.#ctor(Microsoft.Azure.Mobile.Server.TileText[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> class.
+            </summary>
+            <param name="texts">An initial set of <see cref="T:Microsoft.Azure.Mobile.Server.TileText"/> for this tile.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.TileBinding.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Azure.Mobile.Server.TileImage},System.Collections.Generic.IEnumerable{Microsoft.Azure.Mobile.Server.TileText})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> class.
+            </summary>
+            <param name="images">An initial set of <see cref="T:Microsoft.Azure.Mobile.Server.TileImage"/> for this tile.</param>
+            <param name="texts">An initial set of <see cref="T:Microsoft.Azure.Mobile.Server.TileText"/> for this tile.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Template">
+            <summary>
+            One of the provided templates on which to base the tile. Typically, a developer should supply both a square and 
+            a wide format, each as a separate binding element. Valid entries are members of the tileTemplateType enumeration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Fallback">
+            <summary>
+            A template to use if the primary template name is not recognized by the recipient, for use with Windows 8 compatibility. 
+            This value is the Windows 8 name of the value in the template attribute. New templates introduced after Windows 8 do 
+            not have a fallback.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Lang">
+            <summary>
+            The target locale of the XML payload, specified as a BCP-47 language tags such as <c>en-US</c> or <c>fr-FR</c>. 
+            The locale specified here overrides any other specified locale, such as that in binding or visual. 
+            If this value is a literal string, this attribute defaults to the user's UI language. If this value is a 
+            string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.BaseUri">
+            <summary>
+            A default base URI that is combined with relative URIs in image source attributes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Branding">
+            <summary>
+            The form that the tile should use to display the app's brand.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.AddImageQuery">
+            <summary>
+            Set to true to allow Windows to append a query string to the image URI supplied in the tile notification. Use this attribute 
+            if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings 
+            or by ignoring the query string and returning the image as specified without the query string. This query string specifies 
+            scale, contrast setting, and language; for instance, a value of <c>www.website.com/images/hello.png</c> included in the 
+            notification becomes <c>www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.ContentId">
+            <summary>
+            Set to a sender-defined string that uniquely identifies the content of the notification. This prevents duplicates in the 
+            situation where a large tile template is displaying the last three wide tile notifications. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Images">
+            <summary>
+            Set of <see cref="T:Microsoft.Azure.Mobile.Server.TileImage"/> elements
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileBinding.Texts">
+            <summary>
+            Set of <see cref="T:Microsoft.Azure.Mobile.Server.TileText"/> elements
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.TileImage">
+            <summary>
+            This class represents the <c>image</c> element of a Windows Notification tile, see
+            <c>http://msdn.microsoft.com/en-us/library/windows/apps/hh761491.aspx</c> for details.
+            This class is intended for use as part of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileImage.Id">
+            <summary>
+            The image element in the tile template that this image is intended for. 
+            If a template has only one image, then this value is 1. The number of available 
+            image positions is based on the template definition.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileImage.Src">
+            <summary>
+            The URI of the image source, one of these protocol handlers: <c>http://</c> or <c>https://</c> means a web-based image,
+            <c>ms-appx:///</c> means an image included in the app package, <c>ms-appdata:///local/</c> means an image saved to local storage,
+            and <c>file:///</c> means a local image. (Supported only for desktop apps. This protocol cannot be used by Windows Store apps.)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileImage.Alt">
+            <summary>
+            A description of the image, for users of assistive technologies.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileImage.AddImageQuery">
+            <summary>
+            Set to true to allow Windows to append a query string to the image URI supplied in the tile notification. Use this attribute 
+            if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings 
+            or by ignoring the query string and returning the image as specified without the query string. This query string specifies 
+            scale, contrast setting, and language; for instance, a value of <c>www.website.com/images/hello.png</c> included in the 
+            notification becomes <c>www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us</c>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.TileText">
+            <summary>
+            This class represents the <c>text</c> element of a Windows Notification tile, see
+            <c>http://msdn.microsoft.com/en-us/library/windows/apps/hh761491.aspx</c> for details.
+            This class is intended for use as part of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileText.Id">
+            <summary>
+            The text element in the tile template that this text is intended for. If a template has only one text 
+            element, then this value is 1. The number of available text positions is based on the template definition.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileText.Lang">
+            <summary>
+            The target locale of the XML payload, specified as a BCP-47 language tags such as <c>en-US</c> or <c>fr-FR</c>. 
+            The locale specified here overrides any other specified locale, such as that in binding or visual. 
+            If this value is a literal string, this attribute defaults to the user's UI language. If this value is a 
+            string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.TileText.Text">
+            <summary>
+            The actual text of the tile element.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.Toast">
+            <summary>
+            Represents a Toast notification targeting MPNS. Use the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.Toast"/> with 
+            <see cref="T:Microsoft.Azure.Mobile.Server.MpnsPushMessage"/> to create an MPNS notification and send it using the 
+            <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>.
+            </summary>
+            <remarks>
+            For more information about the MPNS Toast, see <c>http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj662938</c>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.Toast.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.Toast"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.Toast.Text1">
+            <summary>
+            Gets or sets the <c>Text1</c> field of the toast.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.Toast.Text2">
+            <summary>
+            Gets or sets the <c>Text2</c> field of the toast.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.Toast.Parameter">
+            <summary>
+            Gets or sets the <c>Param</c> field of the toast.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Notifications.VisualTile">
+            <summary>
+            This class represents the <c>visual</c> element of a Windows Notification tile, see
+            <c>http://msdn.microsoft.com/en-us/library/windows/apps/hh761491.aspx</c> for details.
+            This class is intended for use as part of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.VisualTile"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.#ctor(Microsoft.Azure.Mobile.Server.TileBinding[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.VisualTile"/> class.
+            </summary>
+            <param name="bindings">An initial set of bindings for this <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.VisualTile"/>.</param>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.Version">
+            <summary>
+            The version of the tile XML schema this particular payload was developed for. It can have two 
+            values, 1 or 2. Version 1 requires a valid payload under the Windows 8 schema. Version 2 
+            recognizes the new large tile templates, the new Windows 8.1 template names for existing 
+            templates, and the fallback attribute of the binding element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.Lang">
+            <summary>
+            The target locale of the XML payload, specified as a BCP-47 language tags such as <c>en-US</c> or <c>fr-FR</c>. 
+            The locale specified here overrides any other specified locale, such as that in binding or visual. 
+            If this value is a literal string, this attribute defaults to the user's UI language. If this value is a 
+            string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.BaseUri">
+            <summary>
+            A default base URI that is combined with relative URIs in image source attributes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.Branding">
+            <summary>
+            The form that the tile should use to display the app's brand.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.AddImageQuery">
+            <summary>
+            Set to true to allow Windows to append a query string to the image URI supplied in the tile notification. Use this attribute 
+            if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings 
+            or by ignoring the query string and returning the image as specified without the query string. This query string specifies 
+            scale, contrast setting, and language; for instance, a value of <c>www.website.com/images/hello.png</c> included in the 
+            notification becomes <c>www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.ContentId">
+            <summary>
+            Set to a sender-defined string that uniquely identifies the content of the notification. This prevents duplicates in the 
+            situation where a large tile template is displaying the last three wide tile notifications. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Notifications.VisualTile.Bindings">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> specifies a tile templates. Every notification should include one binding element for each supported tile size.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage">
+            <summary>
+            The <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> helps generating a notification payload targeting 
+            Windows Push Notification Services. Notifications can be sent using the <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.PushClient"/>
+            class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.WindowsPushMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.WindowsPushMessage.#ctor(System.Int32,Microsoft.Azure.Mobile.Server.TileBinding[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> class.
+            </summary>
+            <param name="version">The version of the tile XML schema this particular payload was developed for (e.g. "1" or "2").</param>
+            <param name="bindings">An initial set of bindings for this <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/>.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.WindowsPushMessage.ToString">
+            <summary>
+            Provides an XML representation of the <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/> instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.WindowsPushMessage.XmlPayload">
+            <summary>
+            As an alternative to building the notification programmatically by adding <see cref="T:Microsoft.Azure.Mobile.Server.TileBinding"/> instances to the
+            <see cref="T:Microsoft.Azure.Mobile.Server.WindowsPushMessage"/>, it is possible to provide a complete XML representation which will be sent 
+            to the Notification Hub unaltered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.WindowsPushMessage.Headers">
+            <summary>
+            Any additional HTTP headers sent to the Windows Push Notification Services along with the notification.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.WindowsPushMessage.Visual">
+            <summary>
+            A <see cref="T:Microsoft.Azure.Mobile.Server.Notifications.VisualTile"/> element which contains multiple binding child elements, each of which defines a tile.
+            </summary>
+        </member>
+    </members>
+</doc>

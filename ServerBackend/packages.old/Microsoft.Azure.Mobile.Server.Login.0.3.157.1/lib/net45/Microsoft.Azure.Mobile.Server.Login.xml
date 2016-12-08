@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Mobile.Server.Login</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.Mobile.Server.Properties.CommonResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ArgMustBeGreaterThanOrEqualTo">
+            <summary>
+              Looks up a localized string similar to Argument must be greater than or equal to {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.ArgumentOutOfRange_InvalidEnum">
+            <summary>
+              Looks up a localized string similar to The value must be from the &apos;{0}&apos; enumeration..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Assembly_UnknownFileVersion">
+            <summary>
+              Looks up a localized string similar to &lt;unknown&gt;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.DomainManager_Conflict">
+            <summary>
+              Looks up a localized string similar to The operation failed due to a conflict: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.HttpHeaderToken_Invalid">
+            <summary>
+              Looks up a localized string similar to The format of value &apos;{0}&apos; is invalid. The character &apos;{1}&apos; is not a valid HTTP header token character..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.CommonResources.Property_CannotBeNull">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; cannot be null..
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Mobile.Server.HmacSigningCredentials.ParseKeyString(System.String)">
+            <summary>
+            Converts a base64 OR hex-encoded string into a byte array.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.FormatForUser(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.CurrentCulture"/>, per FxCop's rule
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.FormatInvariant(System.String,System.Object[])">
+            <summary>
+            Formats the input string to be user visible using <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/>.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.SplitAndTrim(System.String,System.Char[])">
+            <summary>
+            Splits a string into segments based on a given <paramref name="separator"/>. The segments are 
+            trimmed and empty segments are removed.
+            </summary>
+            <param name="input">The string to split.</param>
+            <param name="separator">An array of Unicode characters that delimit the substrings in this instance, an empty array that contains no delimiters, or null.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing the resulting segments.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Mobile.Server.Properties.LoginResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.LoginResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.LoginResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Azure.Mobile.Server.Properties.LoginResources.CreateToken_SubjectRequired">
+            <summary>
+              Looks up a localized string similar to Argument must contain exactly one Claim with a Type of &quot;sub&quot;..
+            </summary>
+        </member>
+    </members>
+</doc>
