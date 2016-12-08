@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="open.conference.app.Clients.Views.Cells.OpenConferenceAppGroupHeaderView">
+    <StackLayout VerticalOptions="Center" Style="{StaticResource GreyHeaderStyle}" BackgroundColor="{StaticResource DarkOrange}">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness" Android="16,0,0,10" iOS="16,5,0,10" WinPhone="16,16,16,8"/>
+        </StackLayout.Padding>
+        <Label Text="{Binding Key}" 
+            VerticalOptions="Center" 
+               TextColor="White"
+            VerticalTextAlignment="Center" Style="{StaticResource GreyHeaderLabelStyle}">
+        </Label>
+    </StackLayout>
+</ContentView>

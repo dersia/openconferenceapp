@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:AlwaysScrollView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="open.conference.app.Clients.Views.Controls.ParallaxScrollView"
+             xmlns:local="clr-namespace:open.conference.app.Clients.Views.Controls;assembly=open.conference.app.Clients.Views"
+             xmlns:behaviors="clr-namespace:open.conference.app.Utils.Helpers;assembly=open.conference.app.Utils"
+             Height="{Binding Height}"
+             ScrollY="{Binding ScrollY}">
+    <local:AlwaysScrollView.Behaviors>
+        <behaviors:EventToCommandBehavior EventName="Scrolled" Command="{Binding IgnoreTappingCommand}" />
+    </local:AlwaysScrollView.Behaviors>
+</local:AlwaysScrollView>

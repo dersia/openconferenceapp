@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:developer.open.space.Clients.Views;assembly=developer.open.space.Clients.Views"
-             x:Class="developer.open.space.Clients.Views.DroidRootPage">
-    <MasterDetailPage.Master>
-        <local:DroidMenuPage BindingContext="{Binding}" />
-    </MasterDetailPage.Master>
-</MasterDetailPage>

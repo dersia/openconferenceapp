@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+             xmlns:cells="clr-namespace:open.conference.app.Clients.Views.Cells;assembly=open.conference.app.Clients.Views"
+             xmlns:controls="clr-namespace:open.conference.app.Clients.Views.Controls;assembly=open.conference.app.Clients.Views"
+             xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+             xmlns:behaviors="clr-namespace:open.conference.app.Utils.Helpers;assembly=open.conference.app.Utils"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="open.conference.app.Clients.Views.AboutPage"
+             x:Name="AboutPage"
+             Title="Info"
+             Icon="tab_about.png"
+             BackgroundColor="{StaticResource Primary}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:AccountListHeightAdjustmentConverter x:Key="AccountListHeightAdjustment" />
+            <converters:AboutListHeightAdjustmentConverter x:Key="AboutListHeightAdjustment" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <controls:AlwaysScrollView>
+        <StackLayout Spacing="0">
+
+
+            <StackLayout 
+                BackgroundColor="{StaticResource Primary}"
+                Spacing="{DynamicResource CardSpacing}"
+                Padding="{DynamicResource CardPadding}">
+
+
+                <controls:CardView>
+                    <StackLayout Spacing="0">
+                        <controls:LabelSection Text="My Account"/>
+                        <controls:HeaderDivider/>
+                        <controls:NonScrollableListView 
+                            x:Name="ListViewAccount"
+                            ItemsSource="{Binding AccountItems}"
+                            RowHeight="44"
+                            BackgroundColor="{StaticResource Primary}"
+                            SelectedItem="{Binding SelectedAccount}"
+                            HeightRequest="{Binding AccountListHeightAdjustment, Converter={StaticResource AccountListHeightAdjustment}, ConverterParameter={Binding Path=RowHeight, Source={x:Reference ListViewAccount}}}">
+                            <controls:NonScrollableListView.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="IgnoreAccountTapCommand" />
+                            </controls:NonScrollableListView.Behaviors>
+                            <controls:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                            </controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <cells:TextViewValue Text="{Binding Name}"
+                                                Detail="{Binding Subtitle}"
+                                                Command="{Binding Command}"/>
+                                </DataTemplate>
+                            </controls:NonScrollableListView.ItemTemplate>
+                        </controls:NonScrollableListView>
+                        <controls:FooterDivider/>
+                    </StackLayout>
+                </controls:CardView>
+
+                <controls:CardView Padding="0,32,0,0">
+                    <StackLayout Spacing="0">
+                        <controls:HeaderDivider/>
+                        <Grid Padding="16,0" BackgroundColor="{StaticResource Primary}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Text="{Binding SyncText}" FontAttributes="Bold"
+                            FontSize="{DynamicResource DevopenspaceListItemTextStyleSize}"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="{DynamicResource NavigationText}"
+                            Command="{Binding SyncCommand}"
+                            IsEnabled="{Binding IsNotBusy}"
+                            BackgroundColor="{StaticResource DarkOrange}" />
+                            <ActivityIndicator Grid.Column="1"
+                                IsRunning="{Binding IsBusy}"
+                                IsVisible="{Binding IsBusy}">
+                                <ActivityIndicator.Color>
+                                    <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+                                </ActivityIndicator.Color>
+                            </ActivityIndicator>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                            Command="{Binding SyncCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <controls:FooterDivider/>
+                        <StackLayout Padding="16,8,16,0">
+                            <Label Text="Sign in with your Twitter account to save and sync favorites." 
+                                   Style="{DynamicResource DevopenspaceListItemDetailTextStyle}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </controls:CardView>
+
+
+                <controls:CardView Padding="0,32,0,0">
+                    <StackLayout Spacing="0">
+                        <controls:HeaderDivider/>
+                        <controls:NonScrollableListView 
+                            x:Name="ListViewAbout"
+                            ItemsSource="{Binding AboutItems}"
+                            RowHeight="44"
+                            BackgroundColor="{StaticResource Primary}"
+                            SelectedItem="{Binding SelectedAboutItem}"
+                            HeightRequest="{Binding AboutListHeightAdjustment, Converter={StaticResource AboutListHeightAdjustment}, ConverterParameter={Binding Path=RowHeight, Source={x:Reference ListViewAbout}}}">
+                            <controls:NonScrollableListView.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="IgnoreAboutTapCommand" />
+                            </controls:NonScrollableListView.Behaviors>
+                            <controls:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                            </controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Name}" 
+                                               StyleId="disclosure"/>
+                                </DataTemplate>
+                            </controls:NonScrollableListView.ItemTemplate>
+                        </controls:NonScrollableListView>
+                        <controls:FooterDivider/>
+                    </StackLayout>
+                </controls:CardView>
+
+                <controls:CardView>
+                    <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Conference Info"/>
+                        <controls:HeaderDivider/>
+                        <controls:NonScrollableListView 
+                            x:Name="ListViewInfo"
+                            ItemsSource="{Binding InfoItems}"
+                            SelectedItem="{Binding SelectedInfoItem}"
+                            BackgroundColor="{StaticResource Primary}"
+                            RowHeight="44">
+                            <controls:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                            </controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Name}" 
+                                               StyleId="disclosure"/>
+                                </DataTemplate>
+                            </controls:NonScrollableListView.ItemTemplate>
+                        </controls:NonScrollableListView>
+                        <controls:FooterDivider/>
+                    </StackLayout>
+                </controls:CardView>
+            </StackLayout>
+        </StackLayout>
+    </controls:AlwaysScrollView>
+</ContentPage>

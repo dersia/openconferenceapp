@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="open.conference.app.Clients.Views.SponsorDetailsPage"
+    xmlns:controls="clr-namespace:open.conference.app.Clients.Views.Controls;assembly=open.conference.app.Clients.Views"
+    xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+    Title="Sponsor Details"
+    xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+    BackgroundColor="{StaticResource Primary}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:HasDataConverter x:Key="GenericIsVisibleConverter"/>
+            <converters:FollowListHeightAdjustmentConverter x:Key="FollowListHeightAdjustment" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <controls:AlwaysScrollView>
+        <StackLayout Spacing="0">
+        <StackLayout BackgroundColor="{StaticResource Primary}"
+                             Spacing="{DynamicResource CardSpacing}"
+                             Padding="{DynamicResource CardPadding}">
+                <controls:CardView>
+            <StackLayout Padding="0" Spacing="0" BackgroundColor="{StaticResource Primary}">
+                    <StackLayout Padding="{StaticResource StandardPadding}" >
+                            <StackLayout Padding="32,16,32,0">
+                            <Image
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Aspect="AspectFit"
+                                StyleId="SponsorDetailImage"
+                                HeightRequest="150">
+                                <Image.Source>
+                                        <UriImageSource Uri="{Binding SelectedSponsor.ImageUri}" 
+                                        CacheValidity="4" 
+                                        CachingEnabled="true"/>
+                                </Image.Source>
+                            </Image>
+                            </StackLayout>
+                            <StackLayout Spacing="0">
+                                <Label Text="{Binding SelectedSponsor.Name}" Style="{DynamicResource DevopenspaceListItemTextStyle}" StyleId="SponsorDetailName"/>
+                                <Label Text="{Binding SelectedSponsor.SponsorLevel.Name, StringFormat='{0} Sponsor'}" Style="{DynamicResource DevopenspaceListItemDetailTextStyle}" StyleId="SponsorDetailLevel"/>
+                            </StackLayout>
+                            <StackLayout Padding="0,16">
+                                <Label Text="{Binding SelectedSponsor.Description}"  Style="{DynamicResource DevopenspaceListItemTextStyle}" StyleId="SponsorDetailDescription"/>
+                            </StackLayout>
+                    </StackLayout>
+            </StackLayout>
+            </controls:CardView>
+
+                <controls:CardView IsVisible="{Binding FollowItems, Converter={StaticResource GenericIsVisibleConverter}}">
+            <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Links"/>
+                        <controls:NonScrollableListView 
+                    ItemsSource="{Binding FollowItems}" 
+                    VerticalOptions="Start" 
+                    x:Name="FollowItems"
+                    SelectedItem="{Binding SelectedFollowItem, Mode=TwoWay}"
+                    StyleId="SponsorDetailLinks"
+                    RowHeight="44"
+                    HeightRequest="{Binding FollowsCount, Converter={StaticResource FollowListHeightAdjustment}, ConverterParameter={Binding Path=RowHeight, Source={x:Reference FollowItems}}}">
+                            <controls:NonScrollableListView.SeparatorColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                    </controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell StyleId="disclosure">
+                            <Grid ColumnSpacing="{StaticResource StandardSpacing}">
+                                <Grid.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="0,12" Android="16,8"/>
+                                </Grid.Padding>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                    <Image VerticalOptions="Center" Source="{Binding Icon}">
+                                        <Image.IsVisible>
+                                            <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+                                        </Image.IsVisible>
+                                    </Image>
+                                    <Label Grid.Column="1" VerticalOptions="Center"  Style="{DynamicResource DevopenspaceListItemTextStyle}" Text="{Binding Name}"/>
+                                     <Label Grid.Column="2" 
+                                            VerticalOptions="Center"  
+                                            Style="{DynamicResource DevopenspaceListItemTextStyle}" 
+                                            TextColor="{DynamicResource DetailTextColor}" 
+                                            Text="{Binding Subtitle}">
+                                            <Label.IsVisible>
+                                                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false"/>
+                                            </Label.IsVisible>
+                                    </Label>
+                            </Grid>
+                            </ViewCell> 
+                        </DataTemplate>
+                    </controls:NonScrollableListView.ItemTemplate>
+                </controls:NonScrollableListView>
+            </StackLayout>
+            </controls:CardView>
+        </StackLayout>
+        </StackLayout>
+    </controls:AlwaysScrollView>
+</ContentPage>
