@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+    xmlns:cells="clr-namespace:open.conference.app.Clients.Views.Cells;assembly=open.conference.app.Clients.Views"
+	xmlns:behaviors="clr-namespace:open.conference.app.Utils.Helpers;assembly=open.conference.app.Utils"
+    x:Class="open.conference.app.Clients.Views.SponsorsPage"
+    Title="Sponsors"
+    x:Name="SponsorsPage"
+    Icon="tab_sponsors.png"
+    BackgroundColor="{DynamicResource WindowBackground}">
+   <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView 
+            x:Name="ListViewSponsors"
+            ItemsSource="{Binding Sponsors}"
+            SelectedItem="{Binding SelectedSponsor, Mode=TwoWay}"
+            GroupDisplayBinding="{Binding Key}"
+            IsGroupingEnabled="false"
+            HasUnevenRows ="false"
+            RowHeight="120"
+            IsPullToRefreshEnabled="{Binding IsNotBusy}"
+            RefreshCommand="{Binding ForceRefreshCommand}"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+            CachingStrategy="RetainElement"
+            IsVisible="{Binding IsNotBusy}"
+            AbsoluteLayout.LayoutFlags="All" 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            BackgroundColor="{StaticResource Primary}">
+			<ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SponsorTappedCommand}" />
+            </ListView.Behaviors>
+            <ListView.SeparatorColor>
+                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" Android="Transparent"/>
+            </ListView.SeparatorColor>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell StyleId="disclosure">
+                        <cells:SponsorCell HeightRequest="120"/>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding IsBusy}"
+                                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                                   <StackLayout.Orientation>
+                                    <OnPlatform x:TypeArguments="StackOrientation" iOS="Horizontal"/>
+                                   </StackLayout.Orientation>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" >
+                <ActivityIndicator.Color>
+                    <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+                </ActivityIndicator.Color>
+            </ActivityIndicator>
+            <Label Text="Loading Sponsors..." HorizontalOptions="Center" Style="{DynamicResource DevopenspaceListItemTextStyle}"/>
+       </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

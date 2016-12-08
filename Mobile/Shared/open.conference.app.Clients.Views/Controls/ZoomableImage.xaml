@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="open.conference.app.Clients.Views.Controls.ZoomableImage"
+             xmlns:local="clr-namespace:open.conference.app.Clients.Views.Controls;assembly=open.conference.app.Clients.Views"
+             xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+             x:Name="ZoomableView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:StringToUriImageSourceConverter x:Key="StringToUriImageSource" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.GestureRecognizers>
+        <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+        <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+    </ContentView.GestureRecognizers>
+        <Image x:Name="MainImage" 
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="FillAndExpand" 
+            Aspect="AspectFit"
+            Source="{Binding ImageUrl, Converter={StaticResource StringToUriImageSource}, Mode=OneWay}" />
+</ContentView>

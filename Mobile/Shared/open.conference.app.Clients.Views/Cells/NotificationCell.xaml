@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:local="clr-namespace:open.conference.app.Clients.Views;assembly=open.conference.app.Clients.Views"
+    xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="open.conference.app.Clients.Views.Cells.NotificationCell">
+    <ContentView.Resources>
+     <ResourceDictionary>
+            <converters:HumanizeDateConverter x:Key="HumanizeDateConverter" />
+     </ResourceDictionary>
+    </ContentView.Resources>
+      <StackLayout  HorizontalOptions="FillAndExpand" 
+                      Padding="{StaticResource StandardPadding}" StyleId="NotificationItem">
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource DevopenspaceListItemTextStyle}"/>
+
+            <Label Text="{Binding Date, Converter={StaticResource HumanizeDateConverter}}"  
+                   Style="{DynamicResource DevopenspaceListItemDetailTextStyle}"/>
+       
+       </StackLayout>
+</ContentView>

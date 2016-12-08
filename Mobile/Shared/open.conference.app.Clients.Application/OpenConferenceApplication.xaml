@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity"
+             x:Class="open.conference.app.Clients.Application.OpenConferenceApplication">
+    <prism:PrismApplication.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#ffe9c8</Color>
+            <Color x:Key="PrimaryDark">#efdabb</Color>
+            <Color x:Key="PrimaryDarkTranslucent">#99efdabb</Color>
+            <Color x:Key="Accent">#f1e3cf</Color>
+            <Color x:Key="NavigationText">White</Color>
+            <Color x:Key="LabelSectionText">#ffffff</Color>
+            <Color x:Key="DetailTextColor">#979797</Color>
+            <Color x:Key="DarkOrange">#cf5037</Color>
+            <Color x:Key="DarkGrey">#252c32</Color>
+            <Color x:Key="White">#ffffff</Color>
+           
+
+            <Thickness x:Key="SmallPadding">4</Thickness>
+            <Thickness x:Key="MediumPadding">8</Thickness>
+            <Thickness x:Key="StandardPadding">16</Thickness>
+
+            <x:Double x:Key="SmallSpacing">4</x:Double>
+            <x:Double x:Key="MediumSpacing">8</x:Double>
+            <x:Double x:Key="StandardSpacing">16</x:Double>
+
+
+            <OnPlatform x:TypeArguments="Color" Android="#F5F5F5" iOS="#EFEFF4" WinPhone="#EFEFF4" x:Key="WindowBackgroundTable"/>
+            <OnPlatform x:TypeArguments="Color" Android="#F5F5F5" iOS="White" WinPhone="White" x:Key="WindowBackground"/>
+            <OnPlatform x:TypeArguments="Color" Android="#ECECEC" iOS="#C8C7CC" WinPhone="#C8C7CC" x:Key="Divider"/>
+            <Color x:Key="ButtonBorder">#C8C7CC</Color>
+            <Color x:Key="ListSeparator">#C8C7CC</Color>
+            <OnPlatform x:TypeArguments="Thickness" Android="8,16" iOS="0,0,0,16" WinPhone="0,0,0,16" x:Key="CardPadding"/>
+            <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="16" x:Key="CardSpacing"/>
+
+            <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="13" x:Key="DevopenspaceListItemTextStyleSize" />
+            <OnPlatform x:TypeArguments="x:Double" Android="13" iOS="13" WinPhone="13" x:Key="DevopenspaceListItemDetailTextStyleSize" />
+            <OnPlatform x:TypeArguments="x:Double" Android="18" iOS="13" WinPhone="13" x:Key="LabelSectionFontSize" />
+            <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" WinPhone="14" x:Key="TweetTextSize" />
+            <OnPlatform x:TypeArguments="Font" Android="SemiBold" iOS="SemiBold" WinPhone="SemiBold" x:Key="TweetUserTextSize" />
+            <OnPlatform x:TypeArguments="x:String" Android="sans-serif-light" x:Key="SectionLabelFontFamily" />
+
+
+            <Style x:Key="TweetUserTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="Font" Value="{DynamicResource TweetUserTextSize}" />
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemTextStyleSize}" />
+            </Style>
+            
+
+            <Style x:Key="TweetTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource TweetTextSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource DetailTextColor}"/>
+            </Style>
+
+            <Style x:Key="DevopenspaceListItemTextStyle" TargetType="Label" BaseResourceKey="ListItemTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceistItemTextStyleSize}" />
+            </Style>
+
+            <Style x:Key="DevopenspaceDetailTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+            </Style>
+
+
+            <Style x:Key="SectionLabelTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource LabelSectionFontSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource LabelSectionText}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource SectionLabelFontFamily}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="DevopenspaceListItemDetailTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource DetailTextColor}"/>
+            </Style>
+
+            <Style x:Key="DevopenspaceListItemDetailPrimaryTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource DetailTextColor}"/>
+            </Style>
+
+            <Style x:Key="EventTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemTextStyleSize}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="{DynamicResource SectionLabelFontFamily}"/>
+                <Setter Property="Font" Value="Semibold"/>
+            </Style>
+
+            
+
+            <Style x:Key="DevopenspaceListItemTextStyleBold" TargetType="Label" BaseResourceKey="ListItemTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemTextStyleSize}" />
+
+                <Setter Property="Font" Value="Semibold"/>
+            </Style>
+
+            <Style x:Key="DevopenspaceDetailTextStyleBold" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="DevopenspaceListItemDetailTextStyleBold" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource DetailTextColor}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="DevopenspaceListItemDetailPrimaryTextStyleBold" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource DevopenspaceListItemDetailTextStyleSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            
+            <!--Start of new styles-->
+            <Style x:Key="GreyHeaderLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource LabelSectionFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="{DynamicResource SectionLabelFontFamily}"/>
+                <Setter Property="Font" Value="Semibold"/>
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+            </Style>
+
+            <Style x:Key="GreyHeaderStyle" TargetType="StackLayout">
+                <!--<Setter Property="FontSize" Value="{DynamicResource LabelSectionFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="{DynamicResource SectionLabelFontFamily}"/>
+                <Setter Property="Font" Value="Semibold"/>-->
+                <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+            </Style>
+
+            <Style x:Key="YellowCellStyle" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+            </Style>
+            <Style x:Key="YellowCellLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DetailTextColor}"/>
+            </Style>
+            <Style x:Key="YellowCellTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkGrey}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <!--End of new styles-->
+            
+            
+        </ResourceDictionary>
+    </prism:PrismApplication.Resources>
+</prism:PrismApplication>
