@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="open.conference.app.Clients.Views.WorkshopDetailsPage"
+    xmlns:controls="clr-namespace:open.conference.app.Clients.Views.Controls;assembly=open.conference.app.Clients.Views"
+    xmlns:cells="clr-namespace:open.conference.app.Clients.Views.Cells;assembly=open.conference.app.Clients.Views"
+    xmlns:converters="clr-namespace:open.conference.app.Clients.Converters;assembly=open.conference.app.Clients.Views"
+    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
+	xmlns:behaviors="clr-namespace:open.conference.app.Utils.Helpers;assembly=open.conference.app.Utils"
+    Title="Workshop Details"
+    NavigationPage.BackButtonTitle="Back"
+    BackgroundColor="{DynamicResource WindowBackgroundTable}">
+    <ContentPage.Resources>
+     <ResourceDictionary>
+        <toolkit:HexToColorConverter x:Key="StringToColorConverter" />
+            <converters:WorkshopDateDisplayConverter x:Key="WorkshopDateDisplayConverter" />
+            <converters:IsFavoriteDetailTextConverter x:Key="IsFavoriteDetailTextConverter" />
+            <converters:HasReminderTextConverter x:Key="HasReminderTextConverter" />
+            <converters:IsFilledIconConverter x:Key="IsFilledIconConverter" />
+        <toolkit:HasDataConverter x:Key="GenericIsVisibleConverter"/>
+            <converters:RatingVisibleConverter x:Key="RatingVisibleConverter" />
+        <toolkit:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+     </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="toolbar_share.png" Text="Share" Command="{Binding ShareCommand}"/>
+    </ContentPage.ToolbarItems>
+    <controls:AlwaysScrollView Grid.RowSpan="2" x:Name="MainScroll">
+            <StackLayout Spacing="0"> <!--Padding set dynamic in code behind-->
+              <!--This first stack is what overlays on top of the hero image-->
+              <StackLayout 
+                   Padding="16,32,16,16" 
+                   Spacing="{StaticResource SmallSpacing}"
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="{StaticResource DarkGrey}">
+                    <Label
+                        Text="{Binding SelectedWorkshop.Title}"
+                        FontSize="Large"
+                        Style="{DynamicResource TitleStyle}"
+                        TextColor="White"
+                        StyleId="WorkshopTitle"/>
+                    <Label
+                        x:Name="WorkshopDate"
+                        Text="{Binding SelectedWorkshop, Converter={StaticResource WorkshopDateDisplayConverter}}"
+                        Style="{DynamicResource DevopenspaceDetailTextStyle}"
+                        TextColor="White"
+                        StyleId="WorkshopDate"/>
+                </StackLayout>
+                <StackLayout 
+                    BackgroundColor="{DynamicResource Primary}"
+                    Spacing="{DynamicResource CardSpacing}"
+                    Padding="{DynamicResource CardPadding}">
+
+
+                <controls:CardView IsVisible="{Binding SelectedWorkshop.Speakers, Converter={StaticResource GenericIsVisibleConverter}}">
+                    <!--Speakers-->
+                    <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Speakers"/>
+
+                        <StackLayout IsVisible="{Binding IsBusy}" 
+                                         HorizontalOptions="FillAndExpand" 
+                                         VerticalOptions="Center" 
+                                          BackgroundColor="{StaticResource DarkOrange}"
+                                          Padding="{StaticResource StandardPadding}">
+                            <ActivityIndicator IsRunning="{Binding IsBusy}">
+                                <ActivityIndicator.Color>
+                                    <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+                                </ActivityIndicator.Color>
+                            </ActivityIndicator>
+                            <Label Text="Loading Speakers..." 
+                                       HorizontalOptions="Center" 
+                                       Style="{DynamicResource DevopenspaceListItemTextStyle}"/>
+                        </StackLayout>
+                        <controls:NonScrollableListView 
+                                x:Name="ListViewSpeakers"
+                                BackgroundColor="{StaticResource Primary}"
+                                ItemsSource="{Binding SelectedWorkshop.Speakers}"
+                                StyleId="WorkshopSpeakers"
+                                SelectedItem="{Binding SelectedSpeaker}"
+                                RowHeight="88">
+                            <controls:NonScrollableListView.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding GoToSpeakerCommand}" />
+                            </controls:NonScrollableListView.Behaviors>
+                            <controls:NonScrollableListView.SeparatorColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
+                            </controls:NonScrollableListView.SeparatorColor>
+                            <controls:NonScrollableListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell StyleId="disclosure">
+                                        <cells:SpeakerCellView/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </controls:NonScrollableListView.ItemTemplate>
+                        </controls:NonScrollableListView>
+
+                    </StackLayout>
+                </controls:CardView>
+
+                <!--Follow-->
+                <controls:CardView>
+                      <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Follow"/>
+                        
+                             <Grid Padding="{StaticResource StandardPadding}" 
+                                           BackgroundColor="{StaticResource Primary}"
+                                           ColumnSpacing="{StaticResource StandardSpacing}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions> 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="24"/>
+                                </Grid.ColumnDefinitions>
+                               <Grid.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true"/>
+                               </Grid.IsVisible>
+                                <Button StyleId="ReminderButton"
+                                        IsVisible="{Binding ShowReminder}"
+                                        Text="{Binding IsReminderSet, Converter={StaticResource HasReminderTextConverter}"
+                                        BackgroundColor="{StaticResource DarkOrange}"
+                                        Command="{Binding ReminderCommand}"
+                                        TextColor="White"/>
+                                <Button Grid.Row="1"
+                                        StyleId="FavoriteButton"
+                                        x:Name="FavoriteButtonAndroid"
+                                        Text="{Binding SelectedWorkshop.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"
+                                        BackgroundColor="{StaticResource DarkOrange}" 
+                                        Command="{Binding FavoriteCommand}"
+                                        TextColor="White"/>
+                            <Button 
+                                    StyleId="FavoriteButton"
+                                    x:Name="FeedbackButtonAndroid"
+                                    Text="Feedback zum Workshop abgeben"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{StaticResource DarkOrange}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{DynamicResource Primary}"
+                                    Command="{Binding GoToFeedbackCommand}" />
+
+                            <controls:FavoriteImage StyleId="FavoriteIcon"
+                                        x:Name="FavoriteIconAndroid"
+                                        Source="{Binding SelectedWorkshop.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}"
+                                        Grid.Row="1" Grid.Column="1">
+                                <controls:FavoriteImage.GestureRecognizers>
+                                         <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
+                                     </controls:FavoriteImage.GestureRecognizers>
+                                 </controls:FavoriteImage>
+                                        
+                             </Grid>
+   
+                             <StackLayout Padding="16,0" Spacing="8" Orientation="Horizontal" BackgroundColor="White">
+                                <StackLayout.IsVisible>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
+                                </StackLayout.IsVisible>
+                                <Button 
+                                    StyleId="ReminderButton"
+                                    IsVisible="{Binding ShowReminder}"
+                                    Text="{Binding IsReminderSet, Converter={StaticResource HasReminderTextConverter}}"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="StartAndExpand"
+                                    BackgroundColor="{StaticResource DarkOrange}" 
+                                    Command="{Binding ReminderCommand}" />
+                             </StackLayout>
+                        <controls:SectionDivider/>
+
+                        <StackLayout Padding="16,0" Spacing="8" Orientation="Horizontal" BackgroundColor="{StaticResource Primary}">
+                            <StackLayout.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
+                            </StackLayout.IsVisible>
+                            <Button 
+                                    StyleId="FavoriteButton"
+                                    x:Name="FavoriteButtoniOS"
+                                    Text="{Binding SelectedWorkshop.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{StaticResource DarkOrange}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{DynamicResource Primary}"
+                                    Command="{Binding FavoriteCommand}" />
+                            <Button 
+                                    StyleId="FavoriteButton"
+                                    x:Name="FeedbackButtonIos"
+                                    Text="Feedback zum Workshop abgeben"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{StaticResource DarkOrange}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{DynamicResource Primary}"
+                                    Command="{Binding GoToFeedbackCommand}" />
+                            
+                            <controls:FavoriteImage StyleId="FavoriteIcon" 
+                                    x:Name="FavoriteIconiOS"
+                                    Source="{Binding SelectedWorkshop.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}">
+                                <controls:FavoriteImage.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
+                                </controls:FavoriteImage.GestureRecognizers>
+                            </controls:FavoriteImage>
+                        </StackLayout>
+                    </StackLayout>
+                     </controls:CardView>
+
+                <controls:CardView IsVisible="{Binding SelectedWorkshop.Room, Converter={StaticResource GenericIsVisibleConverter}}">
+                      <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Location"/>
+                        <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="{StaticResource Primary}">
+                            <Label Text="{Binding SelectedWorkshop.Room.Name}" Style="{DynamicResource DevopenspaceListItemTextStyle}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToRoom}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                     </controls:CardView>
+
+                    <!--Abstract-->
+                <controls:CardView IsVisible="{Binding SelectedWorkshop.Abstract, Converter={StaticResource GenericIsVisibleConverter}}">
+                      <StackLayout Spacing="0">
+                        <controls:LabelSection Text="Abstract"/>
+                        <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="{StaticResource Primary}">
+                            <Label Text="{Binding SelectedWorkshop.Abstract}" Style="{StaticResource YellowCellLabelStyle}" StyleId="WorkshopAbstract"/>
+                        </StackLayout>
+                    </StackLayout>
+                     </controls:CardView>
+                </StackLayout>
+            </StackLayout>
+        </controls:AlwaysScrollView>
+</ContentPage>
